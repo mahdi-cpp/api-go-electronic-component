@@ -28,11 +28,8 @@ func getRoutes() {
 
 	v1 := router.Group("/v1")
 
-	routes.addProductsRoutes(v1)
-	routes.addProjectRoutes(v1)
-
-	//v2 := router.Group("/v2")
-	//addStoryRoutes(v2)
+	routes.AddProductsRoutes(v1)
+	routes.AddProjectRoutes(v1)
 }
 
 func CORSMiddleware() gin.HandlerFunc {

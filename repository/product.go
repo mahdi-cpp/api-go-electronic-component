@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"github.com/mahdi-cpp/api-go-electronic-component/config"
 	"github.com/mahdi-cpp/api-go-electronic-component/model"
 	"github.com/mahdi-cpp/api-go-electronic-component/utils"
 	"gorm.io/gorm"
@@ -9,17 +10,14 @@ import (
 
 var db *gorm.DB
 
-func InitUser() {
-	//db.Create(&model.User{Username: "mahdiabdolmaleki", Email: "mahdi.cpp@gmail.com", Phone: "09355512619", Avatar: "2018-10-23_13-55-58_UTC_profile_pic.jpg", Biography: "go lang programmer"})
-}
-
 func Init() {
-	db = db
+	config.Database()
+	db = config.DB
 	db.AutoMigrate(&model.Products{})
 	db.AutoMigrate(&model.Project{})
 }
 
-func InitProducts() {
+func AddProducts() {
 	db.Create(&model.Products{PartNumber: "ESP32", Category: "Modules", Manufacturer: "Espressif", Photos: []string{"Mqz-LcNWat88zyN5OeBFryYNjJHYcz6i", "Mqz-LcNWat88zyN5OeBFryYNjJHYcz6i"}, Price: 1144961, Description: "Small­ sized 2.4 GHz Wi­Fi (802.11 b/g/n) and Bluetooth 5 module\n\n4 MB flash in chip package\n\nOn­board PCB antenna\n\n15 GPIOs", Count: 3})
 	db.Create(&model.Products{PartNumber: "ESP32-S3", Category: "Modules", Manufacturer: "Espressif", Photos: []string{"Mqz-LcNWat88zyN5OeBFryYNjJHYcz6i", "Mqz-LcNWat88zyN5OeBFryYNjJHYcz6i"}, Price: 1144961, Description: "Small­ sized 2.4 GHz Wi­Fi (802.11 b/g/n) and Bluetooth 5 module\n\n4 MB flash in chip package\n\nOn­board PCB antenna\n\n15 GPIOs", Count: 3})
 	db.Create(&model.Products{PartNumber: "ESP32-C3", Category: "Modules", Manufacturer: "Espressif", Photos: []string{"Mqz-LcNWat88zyN5OeBFryYNjJHYcz6i", "Mqz-LcNWat88zyN5OeBFryYNjJHYcz6i"}, Price: 1144961, Description: "Small­ sized 2.4 GHz Wi­Fi (802.11 b/g/n) and Bluetooth 5 module\n\n4 MB flash in chip package\n\nOn­board PCB antenna\n\n15 GPIOs", Count: 3})

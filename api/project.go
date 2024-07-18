@@ -7,7 +7,7 @@ import (
 	"github.com/mahdi-cpp/api-go-electronic-component/repository"
 )
 
-func addProjectRoutes(rg *gin.RouterGroup) {
+func AddProjectRoutes(rg *gin.RouterGroup) {
 
 	router := rg.Group("/project")
 
